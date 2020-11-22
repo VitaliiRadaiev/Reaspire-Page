@@ -642,6 +642,14 @@ strong {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
 .wrapper {
   margin-top: 60px;
   width: 100%;
