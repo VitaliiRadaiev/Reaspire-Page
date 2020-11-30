@@ -2990,6 +2990,16 @@ button.swiper-pagination-bullet {
   height: 100%;
 }
 
+body.webp .home__content:before {
+  background: url("../img/home/pattern_2.webp") center no-repeat;
+  background-size: contain;
+}
+
+body.webp .home__content:after {
+  background: url("../img/home/pattern_1.webp") center no-repeat;
+  background-size: contain;
+}
+
 .home__content {
   margin-bottom: 83px;
   position: relative;
@@ -4073,6 +4083,11 @@ button.swiper-pagination-bullet {
   font-weight: 700;
   letter-spacing: 0.21px;
   color: #414141;
+}
+
+body.webp .recipes:before {
+  background: url("../img/info-page/oil/line.webp") center/100% no-repeat;
+  background-size: 100% 100%;
 }
 
 .info-page .breadcrumb {
@@ -5378,6 +5393,10 @@ button.swiper-pagination-bullet {
 
   .benefit__tooltip-list > li {
     margin-bottom: 5px;
+  }
+
+  body.webp .recipes:before {
+    background-size: cover;
   }
 
   .hero-mini__title {
