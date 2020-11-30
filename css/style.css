@@ -25,40 +25,8 @@
 @font-face {
   font-family: "AvenirNextCyr";
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Bold.woff") format("woff"), url("../fonts/AvenirNextCyr-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextCyr";
-  font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Light.woff") format("woff"), url("../fonts/AvenirNextCyr-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextCyr";
-  font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Medium.woff") format("woff"), url("../fonts/AvenirNextCyr-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextCyr";
-  font-display: swap;
   src: url("../fonts/AvenirNextCyr-Regular.woff") format("woff"), url("../fonts/AvenirNextCyr-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AvenirNextCyr";
-  font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Thin.woff") format("woff"), url("../fonts/AvenirNextCyr-Thin.woff2") format("woff2");
-  font-weight: 100;
   font-style: normal;
 }
 
@@ -67,30 +35,6 @@
   font-display: swap;
   src: url("../fonts/Luxia-Display.woff") format("woff"), url("../fonts/Luxia-Display.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MyriadPro";
-  font-display: swap;
-  src: url("../fonts/MyriadPro-Black.woff") format("woff"), url("../fonts/MyriadPro-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MyriadPro";
-  font-display: swap;
-  src: url("../fonts/MyriadPro-Bold.woff") format("woff"), url("../fonts/MyriadPro-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MyriadPro";
-  font-display: swap;
-  src: url("../fonts/MyriadPro-Light.woff") format("woff"), url("../fonts/MyriadPro-Light.woff2") format("woff2");
-  font-weight: 300;
   font-style: normal;
 }
 
