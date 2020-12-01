@@ -552,7 +552,7 @@ cardVideoHandler();;
 			speed: 800,
 			//touchRatio: 0,
 			//simulateTouch: false,
-			loop: true,
+			//loop: true,
 			//preloadImages: false,
 			//lazy: true,
 			// Dotts
@@ -568,17 +568,26 @@ cardVideoHandler();;
 			
 			breakpoints: {
 				320: {
-					slidesPerView: 1,
+					slidesPerView: 2,
+					spaceBetween: 5,
+					slidesPerColumn: 2,
+					autoHeight: false,
+				},
+				480: {
+					slidesPerView: 2,
 					spaceBetween: 15,
-					autoHeight: true,
+					slidesPerColumn: 2,
+					autoHeight: false,
 				},
 				768: {
 					slidesPerView: 2,
 					spaceBetween: 20,
+					slidesPerColumn: 1,
 				},
 				992: {
 					slidesPerView: 3,
 					spaceBetween: 25,
+					slidesPerColumn: 1,
 				},
 
 			},

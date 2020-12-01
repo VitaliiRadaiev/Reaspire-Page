@@ -3083,7 +3083,11 @@ body.webp .home__content:after {
 		background-size: auto 100%;*/
 }
 
-.home__content:before {
+.home__content .container {
+  position: relative;
+}
+
+.home__content .container:before {
   position: absolute;
   content: '';
   top: 0;
@@ -3092,10 +3096,10 @@ body.webp .home__content:after {
   width: 30%;
   z-index: -1;
   background: url("../img/home/pattern_2.png") center no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
 }
 
-.home__content:after {
+.home__content .container:after {
   position: absolute;
   content: '';
   top: 0;
@@ -3104,7 +3108,7 @@ body.webp .home__content:after {
   width: 30%;
   z-index: -1;
   background: url("../img/home/pattern_1.png") center no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
 }
 
 .hero {
@@ -3176,6 +3180,9 @@ body.webp .home__content:after {
   padding: 6.8em 0 6.8em;
   color: #496f3b;
   margin-bottom: 22px;
+  /*	@media (max-width: $md2+px) {
+		font-size: 8px;
+	}*/
 }
 
 .products-category > .container > p {
@@ -3197,8 +3204,8 @@ body.webp .home__content:after {
 
 .products-category__list > li {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 25%;
-          flex: 0 1 25%;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
   padding: 0 1.5em;
 }
 
@@ -3379,8 +3386,8 @@ body.webp .home__content:after {
 .application__list > li {
   padding: 0 10px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 20%;
-          flex: 0 1 20%;
+      -ms-flex: 0 1 16.666%;
+          flex: 0 1 16.666%;
 }
 
 .application__item {
@@ -3614,7 +3621,7 @@ body.webp .home__content:after {
   font-size: 22px;
   font-weight: 400;
   line-height: 1.1em;
-  margin-bottom: 12px;
+  margin-bottom: 0.54em;
 }
 
 .product-card__text {
@@ -3635,6 +3642,9 @@ body.webp .home__content:after {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .product-card__btn {
@@ -3646,10 +3656,10 @@ body.webp .home__content:after {
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.68px;
+  letter-spacing: 0.0425em;
   position: relative;
-  margin-right: 20px;
-  padding: 14px 0 2px;
+  margin-right: 1.25em;
+  padding: 0.875em 0 2px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -3679,8 +3689,8 @@ body.webp .home__content:after {
 }
 
 .product-card__btn span {
-  width: 18px;
-  margin-left: 18px;
+  width: 1.125em;
+  margin-left: 1.125em;
 }
 
 .product-card__btn span img {
@@ -3695,7 +3705,7 @@ body.webp .home__content:after {
   font-family: "MyriadPro", sans-serif;
   font-size: 19px;
   font-weight: 400;
-  padding: 14px 0 2px;
+  padding: 0.73em 0 2px;
 }
 
 .benefit {
@@ -3796,6 +3806,17 @@ body.webp .home__content:after {
   font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
+}
+
+.benefit__tooltip a {
+  color: #474747;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.benefit__tooltip a:hover {
+  color: #496f3b;
 }
 
 .benefit__tooltip-top {
@@ -5380,10 +5401,6 @@ body.webp .recipes:before {
     padding-right: 0;
   }
 
-  .products-category {
-    font-size: 8px;
-  }
-
   .application__list {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -5540,12 +5557,27 @@ body.webp .recipes:before {
     display: none;
   }
 
+  .home__content .container:before {
+    background-size: contain;
+    width: 100%;
+  }
+
+  .home__content .container:after {
+    background-size: contain;
+    width: 100%;
+    display: none;
+  }
+
   .hero__body {
     min-height: 300px;
   }
 
   .hero__title {
     margin-bottom: 30px;
+  }
+
+  .products-category {
+    padding: 0 0 3em;
   }
 
   .products-category > .container > p {
@@ -5560,8 +5592,24 @@ body.webp .recipes:before {
 
   .products-category__list > li {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .products-category__list > li:nth-child(even) {
+    background: rgba(62, 101, 99, 0.1);
+  }
+
+  .products-category__item {
+    padding: 2em 0 2em;
+  }
+
+  .products-category__item:before {
+    display: none;
+  }
+
+  .products-category__img {
+    display: none;
   }
 
   .products-category__hr {
@@ -5599,10 +5647,24 @@ body.webp .recipes:before {
        object-position: left;
   }
 
-  .application__list > li {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
+  .application__icon {
+    height: 48px;
+    margin-bottom: 10px;
+  }
+
+  .application__item-title {
+    font-size: 16px;
+  }
+
+  .slider .swiper-container {
+    height: 900px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slider .swiper-slide {
+    height: calc((100% - 60px) / 2);
+    margin-bottom: 20px;
   }
 
   .slider__title {
@@ -5932,6 +5994,14 @@ body.webp .recipes:before {
     width: 105px;
   }
 
+  .application__icon {
+    height: 40px;
+  }
+
+  .application__item-title {
+    font-size: 12px;
+  }
+
   .application__tooltip {
     font-size: 12px;
     letter-spacing: 0.35px;
@@ -5945,6 +6015,34 @@ body.webp .recipes:before {
     margin-top: -1px;
     height: 29px;
     background-position: 50% -0 !important;
+  }
+
+  .slider .swiper-container {
+    height: 700px;
+  }
+
+  .slider__btn {
+    top: 52%;
+  }
+
+  .product-card__img {
+    height: 150px;
+  }
+
+  .product-card__title {
+    font-size: 14px;
+  }
+
+  .product-card__text {
+    font-size: 9px;
+  }
+
+  .product-card__btn {
+    font-size: 12px;
+  }
+
+  .product-card__price {
+    font-size: 16px;
   }
 
   .benefit__tooltip {
