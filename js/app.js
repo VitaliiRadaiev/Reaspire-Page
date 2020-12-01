@@ -92,7 +92,7 @@ $('img.img-svg').each(function(){
 
 
 //Spollers
-
+function spollerStart() {
 	let spollers = document.querySelectorAll("._spoller");
 	if (spollers.length > 0) {
 		for (let index = 0; index < spollers.length; index++) {
@@ -120,7 +120,8 @@ $('img.img-svg').each(function(){
 			});
 		}
 	}
-
+}
+spollerStart();
 // === // Spollers ==================================================================
 
 
@@ -609,5 +610,47 @@ cardVideoHandler();;
   }
 }
 ;
+function recipesAddSpollers() {
+	let list = document.querySelector('.recipes__list');
+
+	if(list.classList.contains('_spollers')) {
+		return
+	} else {
+		let labels = list.querySelectorAll('.recipes__label');
+
+		list.classList.add('_spollers');
+		labels.forEach(item => {
+			item.classList.add('_spoller');
+		})
+		spollerStart();
+	}
+}
+
+function recipesRemoveSpollers() {
+	let list = document.querySelector('.recipes__list');
+	let labels = list.querySelectorAll('.recipes__label');
+
+	list.classList.remove('_spollers');
+	labels.forEach(item => {
+		item.classList.remove('_spoller');
+	})
+}
+
+{
+	let recipes = document.querySelector('.recipes');
+	if(recipes) {
+		if(document.documentElement.clientWidth < 768) {
+			recipesAddSpollers();
+					} else {
+			window.addEventListener('resize', () => {
+				if(document.documentElement.clientWidth < 768) {
+					recipesAddSpollers();
+				} else {
+					recipesRemoveSpollers();
+				}
+			})
+		}
+	}
+};
 
 });
