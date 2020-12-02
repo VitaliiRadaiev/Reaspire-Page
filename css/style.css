@@ -5309,13 +5309,13 @@ button.btn-default:active {
 
 .footer__logo {
   width: 100%;
-  max-width: 150px;
+  max-width: 170px;
 }
 
 .footer__logo img {
   width: 100%;
   margin-right: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
 }
 
 .footer__btn {
