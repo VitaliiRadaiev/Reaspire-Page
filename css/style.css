@@ -3471,16 +3471,16 @@ body.webp .home__content:after {
   z-index: 50;
   margin-bottom: 33px;
   padding: 48px 0 0;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b4ddb4+0,83c783+17,52b152+33,008a00+67,005700+83,002400+100;Green+3D+%231 */
-  background: #b4ddb4;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#edefee+0,edefee+17,edefee+33,c9c9c9+67,bcbcbc+83,afafaf+100 */
+  background: #edefee;
   /* Old browsers */
   /* FF3.6-15 */
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#b4ddb4), color-stop(17%, #83c783), color-stop(33%, #52b152), color-stop(67%, #008a00), color-stop(83%, #005700), to(#002400));
-  background: -o-linear-gradient(top, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
-  background: linear-gradient(to bottom, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#edefee), color-stop(17%, #edefee), color-stop(33%, #edefee), color-stop(67%, #c9c9c9), color-stop(83%, #bcbcbc), to(#afafaf));
+  background: -o-linear-gradient(top, #edefee 0%, #edefee 17%, #edefee 33%, #c9c9c9 67%, #bcbcbc 83%, #afafaf 100%);
+  background: linear-gradient(to bottom, #edefee 0%, #edefee 17%, #edefee 33%, #c9c9c9 67%, #bcbcbc 83%, #afafaf 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edefee', endColorstr='#afafaf',GradientType=0 );
   /* IE6-9 */
 }
 
@@ -4548,16 +4548,16 @@ body.webp .recipes:before {
 .product-advantages {
   position: relative;
   font-size: 8px;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b4ddb4+0,83c783+17,52b152+33,008a00+67,005700+83,002400+100;Green+3D+%231 */
-  background: #b4ddb4;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#afafaf+0,bcbcbc+29,c9c9c9+49,edefee+86,edefee+94,edefee+100 */
+  background: #afafaf;
   /* Old browsers */
   /* FF3.6-15 */
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#b4ddb4), color-stop(17%, #83c783), color-stop(33%, #52b152), color-stop(67%, #008a00), color-stop(83%, #005700), to(#002400));
-  background: -o-linear-gradient(top, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
-  background: linear-gradient(to bottom, #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#afafaf), color-stop(29%, #bcbcbc), color-stop(49%, #c9c9c9), color-stop(86%, #edefee), color-stop(94%, #edefee), to(#edefee));
+  background: -o-linear-gradient(top, #afafaf 0%, #bcbcbc 29%, #c9c9c9 49%, #edefee 86%, #edefee 94%, #edefee 100%);
+  background: linear-gradient(to bottom, #afafaf 0%, #bcbcbc 29%, #c9c9c9 49%, #edefee 86%, #edefee 94%, #edefee 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afafaf', endColorstr='#edefee',GradientType=0 );
   /* IE6-9 */
 }
 
@@ -5100,7 +5100,7 @@ body.webp .recipes:before {
 }
 
 .error-message {
-  margin: 100px 0 100px;
+  margin: 100px 0 20px;
   text-align: center;
 }
 
@@ -5110,6 +5110,24 @@ body.webp .recipes:before {
   line-height: 1.7em;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
+}
+
+.error-message figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 30px 0 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.error-message figure img {
+  max-width: 660px;
+  width: 100%;
 }
 
 .shipping__content {
@@ -5972,6 +5990,10 @@ button.btn-default:active {
     text-align: center;
   }
 
+  .product-card__img {
+    height: 120px;
+  }
+
   .benefit {
     padding-bottom: 0;
   }
@@ -6019,6 +6041,10 @@ button.btn-default:active {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
+  }
+
+  .current-product__list > li .product-card__img {
+    height: 120px;
   }
 
   .product-advantages {
@@ -6333,7 +6359,7 @@ button.btn-default:active {
   }
 
   .product-card__img {
-    height: 150px;
+    height: 100px;
   }
 
   .product-card__title {
@@ -6382,6 +6408,10 @@ button.btn-default:active {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
+  }
+
+  .current-product__list > li .product-card__img {
+    height: 100px;
   }
 
   .product-advantages {
