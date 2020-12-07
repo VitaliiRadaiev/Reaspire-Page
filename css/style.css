@@ -655,6 +655,7 @@ strong {
           transform: translateY(-50%);
   z-index: -1;
   line-height: 1em;
+  font-style: normal;
 }
 
 .title-2 > span {
@@ -3186,50 +3187,10 @@ button.swiper-pagination-bullet {
   font-weight: 400;
 }
 
-body.webp .home__content:before {
-  background: url("../img/home/pattern_2.webp") center no-repeat;
-  background-size: contain;
-}
-
-body.webp .home__content:after {
-  background: url("../img/home/pattern_1.webp") center no-repeat;
-  background-size: contain;
-}
-
 .home__content {
   margin-bottom: 83px;
   position: relative;
   z-index: 10;
-  /*background: url('../img/home/content-decor.png') center no-repeat;
-		background-size: auto 100%;*/
-}
-
-.home__content .container {
-  position: relative;
-}
-
-.home__content .container:before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 30%;
-  z-index: -1;
-  background: url("../img/home/pattern_2.png") center no-repeat;
-  background-size: cover;
-}
-
-.home__content .container:after {
-  position: absolute;
-  content: '';
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 30%;
-  z-index: -1;
-  background: url("../img/home/pattern_1.png") center no-repeat;
-  background-size: cover;
 }
 
 .hero {
@@ -3852,7 +3813,7 @@ body.webp .home__content:after {
 }
 
 .benefit {
-  padding: 79px 0 86px;
+  padding: 79px 0 10px;
   position: relative;
   z-index: 52;
   background-color: #edefee;
@@ -4548,17 +4509,7 @@ body.webp .recipes:before {
 .product-advantages {
   position: relative;
   font-size: 8px;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#afafaf+0,bcbcbc+29,c9c9c9+49,edefee+86,edefee+94,edefee+100 */
-  background: #afafaf;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#afafaf), color-stop(29%, #bcbcbc), color-stop(49%, #c9c9c9), color-stop(86%, #edefee), color-stop(94%, #edefee), to(#edefee));
-  background: -o-linear-gradient(top, #afafaf 0%, #bcbcbc 29%, #c9c9c9 49%, #edefee 86%, #edefee 94%, #edefee 100%);
-  background: linear-gradient(to bottom, #afafaf 0%, #bcbcbc 29%, #c9c9c9 49%, #edefee 86%, #edefee 94%, #edefee 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afafaf', endColorstr='#edefee',GradientType=0 );
-  /* IE6-9 */
+  background-color: #000;
 }
 
 .product-advantages .container {
@@ -4593,7 +4544,7 @@ body.webp .recipes:before {
       -ms-flex: 0 1 20%;
           flex: 0 1 20%;
   text-align: center;
-  color: #fff;
+  color: #8e8e8e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4620,7 +4571,7 @@ body.webp .recipes:before {
 }
 
 .product-advantages__text {
-  color: #ffffff;
+  color: #8e8e8e;
   font-family: "3satHurme-SemiBold", sans-serif;
   font-size: 2.1em;
   letter-spacing: 0.02em;
@@ -4639,7 +4590,7 @@ body.webp .recipes:before {
 
 .product-advantages__line {
   height: 0.2em;
-  background-color: #ffffff;
+  background-color: #8e8e8e;
   margin-bottom: 0.4em;
   margin-top: 0.4em;
   /*		@media (max-width: $md3+px) {
@@ -4787,18 +4738,6 @@ body.webp .recipes:before {
   z-index: 10;
 }
 
-.recipes:before {
-  position: absolute;
-  content: '';
-  left: 0;
-  bottom: -25px;
-  width: 100%;
-  height: 235px;
-  z-index: -1;
-  background: url("../img/info-page/oil/line.png") center/100% no-repeat;
-  background-size: 100% 100%;
-}
-
 .recipes__img {
   position: absolute;
   right: -121px;
@@ -4922,7 +4861,8 @@ body.webp .recipes:before {
 
 .decor-text-block {
   padding: 13px 0 20px;
-  margin-bottom: 236px;
+  margin-top: 70px;
+  margin-bottom: 120px;
   position: relative;
   /*	@media (max-width: 1150px) {
 		margin-bottom: 0;
@@ -5097,6 +5037,11 @@ body.webp .recipes:before {
   line-height: 1.1em;
   text-align: center;
   text-transform: uppercase;
+}
+
+.page404 .products-category {
+  margin-bottom: 45px;
+  padding-bottom: 0.8em;
 }
 
 .error-message {
@@ -5516,6 +5461,10 @@ button.btn-default:active {
   .recipes__ingredients {
     display: block !important;
   }
+
+  .page404 .products-category {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 992px) {
@@ -5874,17 +5823,6 @@ button.btn-default:active {
     display: none;
   }
 
-  .home__content .container:before {
-    background-size: contain;
-    width: 100%;
-  }
-
-  .home__content .container:after {
-    background-size: contain;
-    width: 100%;
-    display: none;
-  }
-
   .hero__body {
     min-height: 300px;
   }
@@ -6025,6 +5963,10 @@ button.btn-default:active {
             flex: 0 1 33.333%;
   }
 
+  .single-page .slider {
+    margin-bottom: 0;
+  }
+
   body.webp .recipes:before {
     background-size: cover;
   }
@@ -6050,10 +5992,6 @@ button.btn-default:active {
   .product-advantages {
     font-size: 6px;
     margin-bottom: 0;
-  }
-
-  .recipes:before {
-    background-size: cover;
   }
 
   .recipes__list > li {
@@ -6089,6 +6027,7 @@ button.btn-default:active {
   }
 
   .decor-text-block {
+    margin-top: 30px;
     margin-bottom: 100px;
   }
 
@@ -6416,6 +6355,11 @@ button.btn-default:active {
 
   .product-advantages {
     font-size: 4px;
+  }
+
+  .decor-text-block {
+    margin-top: 0px;
+    margin-bottom: 70px;
   }
 
   .advantages {
