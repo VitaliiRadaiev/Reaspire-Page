@@ -6641,10 +6641,12 @@ button.btn-default:active {
     height: 350px;
   }
 
+  .current-product__list {
+    margin: 0 -5px;
+  }
+
   .current-product__list > li {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 100%;
-            flex: 0 1 100%;
+    padding: 0 5px;
   }
 
   .current-product__list > li .product-card__img {
