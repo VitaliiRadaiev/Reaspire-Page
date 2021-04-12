@@ -384,6 +384,9 @@ function select_item(select) {
 	const select_selected_option = select.querySelector('option:checked');
 	const select_selected_text = select_selected_option.text;
 	const select_type = select.getAttribute('data-type');
+	const select_option_url = select_selected_option.dataset.flag;
+
+	
 
 	if (select_items) {
 		select_items.remove();
@@ -393,9 +396,9 @@ function select_item(select) {
 	if (select_type == 'input') {
 		select_type_content = '<div class="select__value icon-select-arrow"><input autocomplete="off" type="text" name="form[]" value="' + select_selected_text + '" data-error="Ошибка" data-value="' + select_selected_text + '" class="select__input"></div>';
 	} else {
-		select_type_content = '<div class="select__value icon-select-arrow"><span>' + select_selected_text + '</span></div>';
+		select_type_content = '<div class="select__value icon-select-arrow"><span><img src="' + select_option_url +'" alt=""></img>' + select_selected_text + '</span></div>';
 	}
-
+	
 	select_parent.insertAdjacentHTML('beforeend',
 		'<div class="select__item">' +
 		'<div class="select__title">' + select_type_content + '</div>' +
@@ -459,9 +462,11 @@ function select_get_options(select_options) {
 		for (let index = 0; index < select_options.length; index++) {
 			const select_option = select_options[index];
 			const select_option_value = select_option.value;
+			const select_option_url = select_option.dataset.flag;
+
 			if (select_option_value != '') {
 				const select_option_text = select_option.text;
-				select_options_content = select_options_content + '<div data-value="' + select_option_value + '" class="select__option">' + select_option_text + '</div>';
+				select_options_content = select_options_content + '<div data-value="' + select_option_value + '" class="select__option"><img src="' + select_option_url +  '" alt="">' + select_option_text + '</div>';
 			}
 		}
 		return select_options_content;
@@ -586,71 +591,107 @@ function cardVideoHandler() {
 
 cardVideoHandler();;
 {
-	let slider = document.querySelector('.slider .swiper-container');
-	if(slider) {
-		let dataSlider = new Swiper(slider, {
-			/*
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
-			//observer: true,
-			//observeParents: true,
-			slidesPerView: 3,
-			spaceBetween: 25,
-			//autoHeight: true,
-			speed: 800,
-			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
-			// Dotts
-			//pagination: {
-			//	el: '.slider-quality__pagging',
-			//	clickable: true,
-			//},
-			// Arrows
-			navigation: {
-				nextEl: '.slider__btn-next',
-				prevEl: '.slider__btn-prev',
-			},
-			
-			breakpoints: {
-				320: {
-					slidesPerView: 2,
-					spaceBetween: 5,
-					slidesPerColumn: 2,
-					autoHeight: false,
+	let sliders = document.querySelectorAll('.slider');
+	sliders.forEach(item => {
+		let slider = item.querySelector('.swiper-container');
+		let dataSlider;
+		let dataSliderBottom;
+	
+		if(slider) {
+			dataSlider = new Swiper(slider, {
+				slidesPerView: 3,
+				spaceBetween: 25,
+				speed: 800,
+				navigation: {
+					nextEl: '.slider__btn-next',
+					prevEl: '.slider__btn-prev',
 				},
-				480: {
-					slidesPerView: 2,
-					spaceBetween: 15,
-					slidesPerColumn: 2,
-					autoHeight: false,
+				
+				breakpoints: {
+					320: {
+						slidesPerView: 2,
+						spaceBetween: 5,
+						autoHeight: false,
+					},
+					480: {
+						slidesPerView: 2,
+						spaceBetween: 15,
+						autoHeight: false,
+					},
+					768: {
+						slidesPerView: 3,
+						spaceBetween: 20,
+	
+					},
+					992: {
+						slidesPerView: 4,
+						spaceBetween: 20,
+		
+					},
+	
 				},
-				768: {
+				
+			});
+	
+			if(document.documentElement.clientWidth < 768) {
+				createSlider();
+			}
+	
+			function createSlider() {
+				let container = item.querySelector('.container');
+				let mainSliderChilds = [...item.querySelector('.swiper-container .swiper-wrapper').children];
+				let hulfChilds = mainSliderChilds.slice(Math.floor(mainSliderChilds.length / 2));
+				
+				let slider = document.createElement('div');
+				slider.className = "bottom-slider swiper-container";
+				slider.innerHTML = '<div class="swiper-wrapper"></div>';
+				slider.firstChild.append(...hulfChilds);
+	
+				dataSlider.update();
+				container.append(slider);
+	
+				dataSliderBottom = new Swiper(slider, {
 					slidesPerView: 3,
-					spaceBetween: 20,
-					slidesPerColumn: 1,
-				},
-				992: {
-					slidesPerView: 4,
-					spaceBetween: 20,
-					slidesPerColumn: 1,
-				},
-
-			},
+					spaceBetween: 25,
+					speed: 800,
+					
+					breakpoints: {
+						320: {
+							slidesPerView: 2,
+							spaceBetween: 5,
+							autoHeight: false,
+						},
+						480: {
+							slidesPerView: 2,
+							spaceBetween: 15,
+							autoHeight: false,
+						},
+						768: {
+							slidesPerView: 3,
+							spaceBetween: 20,
+		
+						},
+						992: {
+							slidesPerView: 4,
+							spaceBetween: 20,
 			
+						},
+		
+					},
+					
+				});
+	
+				dataSlider.controller.control = dataSliderBottom;
+				dataSliderBottom.controller.control = dataSlider;
+					
+			}
+	
+			function destroySlider() {
+	
+			}
+		}
+	})
 
-			// And if we need scrollbar
-			//scrollbar: {
-			//	el: '.swiper-scrollbar',
-			//},
-		});
-	}
 };
 {
   let gallerySlider = document.querySelector('.gallery-slider');
@@ -760,6 +801,35 @@ document.body.addEventListener('click', (e) => {
 		document.querySelector('.mini-basket').closest('.action__icon').classList.remove('active')
 	}
 })
+{
+	let topLine = document.querySelector('.top-line');
+	if(topLine) {
+		let observer = new MutationObserver(mutationRecords => {
+			let basket = document.querySelector('.mini-basket');
+			let list = basket.querySelector('.mini-basket__list');
+			if(list.children.length >= 2) {
+				basket.classList.add('_is-scroll');
+			} else {
+				basket.classList.remove('_is-scroll');
+			}
+		});
+		observer.observe(topLine, {
+		childList: true, 
+		subtree: true, 
+		});
+	}
+
+
+	let basket = document.querySelector('.mini-basket');
+	if(basket) {
+		let list = basket.querySelector('.mini-basket__list');
+		if(list.children.length >= 2) {
+			basket.classList.add('_is-scroll');
+		} else {
+			basket.classList.remove('_is-scroll');
+		}
+	}
+}
 // == // close basket ============================
 
 // == application tooltip handler ============================
